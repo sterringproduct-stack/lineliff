@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>My LIFF</title>
+  <meta charset="UTF-8">
+  <title>PetGoods Register</title>
 </head>
 <body>
 
-<h1>LINE LIFF</h1>
-<p id="profile"></p>
+  <h1>สมัครสมาชิก PetGoods</h1>
 
-<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-<script src="script.js"></script>
+  <p id="profile">กำลังโหลด...</p>
+
+  <input id="phone" placeholder="เบอร์โทรศัพท์"><br><br>
+  <input id="petname" placeholder="ชื่อสัตว์เลี้ยง"><br><br>
+  <input id="pettype" placeholder="ประเภทสัตว์เลี้ยง เช่น หมา แมว"><br><br>
+
+  <button onclick="submitForm()">สมัครสมาชิก</button>
+
+  <p id="result"></p>
+
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
