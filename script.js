@@ -1,37 +1,56 @@
 const liffId = "2010567384-7VDFmpAy";
-let userProfile = null;
+
+let profile = null;
 
 async function main() {
-  try {
-    await liff.init({ liffId });
 
-    if (!liff.isLoggedIn()) {
-      liff.login();
-      return;
+    try {
+
+        await liff.init({ liffId });
+
+        if (!liff.isLoggedIn()) {
+            liff.login();
+            return;
+        }
+
+        profile = await liff.getProfile();
+
+        document.getElementById("profile").innerHTML =
+            "<b>ชื่อใน LINE :</b> " + profile.displayName;
+
+    } catch (err) {
+
+        document.getElementById("profile").innerHTML =
+            err.message;
+
     }
 
-    userProfile = await liff.getProfile();
-
-    document.getElementById("profile").innerHTML =
-      "สวัสดี " + userProfile.displayName;
-
-  } catch (err) {
-    document.getElementById("profile").innerHTML =
-      "Error : " + err;
-  }
 }
 
 function submitForm() {
-  const phone = document.getElementById("phone").value;
-  const fullname = document.getElementById("petname").value;
-  const pettype = document.getElementById("pettype").value;
 
-  document.getElementById("result").innerHTML =
-    "สมัครสำเร็จ<br>" +
-    "ชื่อ LINE: " + userProfile.displayName + "<br>" +
-    "เบอร์: " + phone + "<br>" +
-    "ชื่อ-สกุล: " + fullname + "<br>" +
-    "ประเภท: " + pettype;
+    const data = {
+
+        lineName: profile.displayName,
+        userId: profile.userId,
+
+        fullname: document.getElementById("fullname").value,
+
+        phone: document.getElementById("phone").value,
+
+        birthday: document.getElementById("birthday").value,
+
+        province: document.getElementById("province").value,
+
+        pettype: document.getElementById("pettype").value
+
+    };
+
+    console.log(data);
+
+    document.getElementById("result").innerHTML =
+        "สมัครสมาชิกเรียบร้อยแล้ว";
+
 }
 
 main();
