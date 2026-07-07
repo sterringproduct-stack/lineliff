@@ -23,7 +23,7 @@ async function main() {
 
 function submitForm() {
   const phone = document.getElementById("phone").value;
-  const petname = document.getElementById("petname").value;
+  const fullname = document.getElementById("petname").value;
   const pettype = document.getElementById("pettype").value;
 
   document.getElementById("result").innerHTML =
