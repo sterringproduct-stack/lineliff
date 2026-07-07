@@ -1,4 +1,5 @@
 const liffId = "2010567384-7VDFmpAy";
+let userProfile = null;
 
 async function main() {
   try {
@@ -9,15 +10,28 @@ async function main() {
       return;
     }
 
-    const profile = await liff.getProfile();
+    userProfile = await liff.getProfile();
 
     document.getElementById("profile").innerHTML =
-      "สวัสดี " + profile.displayName;
+      "สวัสดี " + userProfile.displayName;
 
   } catch (err) {
     document.getElementById("profile").innerHTML =
       "Error : " + err;
   }
+}
+
+function submitForm() {
+  const phone = document.getElementById("phone").value;
+  const petname = document.getElementById("petname").value;
+  const pettype = document.getElementById("pettype").value;
+
+  document.getElementById("result").innerHTML =
+    "สมัครสำเร็จ<br>" +
+    "ชื่อ LINE: " + userProfile.displayName + "<br>" +
+    "เบอร์: " + phone + "<br>" +
+    "ชื่อสัตว์เลี้ยง: " + petname + "<br>" +
+    "ประเภท: " + pettype;
 }
 
 main();
