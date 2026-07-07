@@ -1,25 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
+
 <head>
-  <meta charset="UTF-8">
-  <title>PetGoods Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetGoods Member</title>
+
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>สมัครสมาชิก PetGoods</h1>
+    <div class="container">
 
-  <p id="profile">กำลังโหลด...</p>
+        <h2>สมัครสมาชิก PetGoods</h2>
 
-  <input id="phone" placeholder="เบอร์โทรศัพท์"><br><br>
-  <input id="fullname" placeholder="ชื่อสัตว์เลี้ยง"><br><br>
-  <input id="pettype" placeholder="ประเภทสัตว์เลี้ยง เช่น หมา แมว"><br><br>
+        <div id="profile" class="profile">
+            กำลังโหลดข้อมูล...
+        </div>
 
-  <button onclick="submitForm()">สมัครสมาชิก</button>
+        <input type="text" id="fullname" placeholder="ชื่อ - นามสกุล">
 
-  <p id="result"></p>
+        <input type="tel" id="phone" placeholder="เบอร์โทรศัพท์">
 
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-  <script src="script.js"></script>
+        <input type="date" id="birthday">
+
+        <input type="text" id="province" placeholder="จังหวัด">
+
+        <select id="pettype">
+            <option value="">เลือกประเภทสัตว์เลี้ยง</option>
+            <option>สุนัข</option>
+            <option>แมว</option>
+            <option>นก</option>
+            <option>ปลา</option>
+            <option>สัตว์เลี้ยงอื่นๆ</option>
+        </select>
+
+        <button onclick="submitForm()">
+            สมัครสมาชิก
+        </button>
+
+        <p id="result"></p>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
