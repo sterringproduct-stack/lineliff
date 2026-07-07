@@ -30,7 +30,7 @@ function submitForm() {
     "สมัครสำเร็จ<br>" +
     "ชื่อ LINE: " + userProfile.displayName + "<br>" +
     "เบอร์: " + phone + "<br>" +
-    "ชื่อ-สกุล: " + name + "<br>" +
+    "ชื่อ-สกุล: " + fullname + "<br>" +
     "ประเภท: " + pettype;
 }
 
