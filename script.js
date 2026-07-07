@@ -31,8 +31,7 @@ function submitForm() {
 
     const data = {
 
-        lineName: profile.displayName,
-        userId: profile.userId,
+        if (!profile){alert("ยังโหลดข้อมูล LINE ไม่เสร็จ");return;}
 
         fullname: document.getElementById("fullname").value,
 
